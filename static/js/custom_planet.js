@@ -1,49 +1,69 @@
-const planetData = {
-    mercury: {
-        info: "Mercury is the smallest planet in our Solar System.",
-        imgPath: "/static/images/Mercury.png"
-    },
-    venus: {
-        info: "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty.",
-        imgPath: "/static/images/Venus.png"
-    },
-    // ... Add similar entries for other planets ...
-};
-
-
 document.getElementById('planet-search').addEventListener('input', function () {
     const planetName = this.value.toLowerCase();
 
-    // Check if planet exists in our dataset
-    if (planetData[planetName]) {
-        // Get planet details from dataset
-        const { info, imgPath } = planetData[planetName];
+    // Remove previous info-bubble if any
+    const oldBubble = document.querySelector('.info-bubble');
+    if (oldBubble) {
+        oldBubble.remove();
+    }
 
-        // Update Bootstrap card with planet information
+    const planets = {
+        mercury: {
+            info: "Mercury is the smallest planet in our Solar System.",
+            imagePath: "static/images/Mercury.png"
+        },
+        venus: {
+            info: "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty.",
+            imagePath: "static/images/Venus.png"
+        }
+        // ... Add similar info and paths for other planets ...
+    };
+
+    if (planets[planetName]) {
+        // Display bubble info on the planet
+        const planetElement = document.querySelector(`.${planetName}`);
+        const infoBubble = document.createElement('div');
+        infoBubble.className = 'info-bubble';
+        infoBubble.innerText = planetName.charAt(0).toUpperCase() + planetName.slice(1);
+        planetElement.appendChild(infoBubble);
+
+        // Display planet info and image in the card
         const planetCard = document.getElementById('planet-card');
+        planetCard.style.display = 'block';
         document.getElementById('planet-card-title').innerText = planetName.charAt(0).toUpperCase() + planetName.slice(1);
-        document.getElementById('planet-card-description').innerText = info;
-        document.getElementById('planet-image').src = imgPath;
-        planetCard.style.display = 'block';
-
-        // Update the modal with detailed information too
-        document.getElementById('planetModalLabel').innerText = planetName.charAt(0).toUpperCase() + planetName.slice(1);
-        document.querySelector('#planetModal .modal-body').innerText = info;
-
+        document.getElementById('planet-card-description').innerText = planets[planetName].info;
+        document.getElementById('planet-image').src = planets[planetName].imagePath;
     } else {
-        // If planet doesn't exist in our dataset, show default "not found" message and image
+        // Display default state
         const planetCard = document.getElementById('planet-card');
-        document.getElementById('planet-card-title').innerText = "Planet Not Found";
-        document.getElementById('planet-card-description').innerText = "The planet you're looking for could not be found.";
-        document.getElementById('planet-image').src = "/static/images/pluto.png"; // Default image path
         planetCard.style.display = 'block';
+        document.getElementById('planet-card-title').innerText = "Unknown Planet";
+        document.getElementById('planet-card-description').innerText = "The planet you're looking for could not be found.";
+        document.getElementById('planet-image').src = "static/images/pluto.png";
     }
 });
 
-document.getElementById('darkModeSwitch').addEventListener('change', function () {
+document.getElementById('orbitSwitch').addEventListener('change', function() {
+    const orbits = document.querySelectorAll('.orbit');
     if (this.checked) {
-        document.body.classList.add('dark-mode');
+        orbits.forEach(orbit => orbit.style.display = 'block');
     } else {
-        document.body.classList.remove('dark-mode');
+        orbits.forEach(orbit => orbit.style.display = 'none');
     }
 });
+
+document.getElementById('darkModeSwitch').addEventListener('change', function() {
+    const body = document.querySelector('body');
+    const cardBody = document.getElementById('the-planets');
+    if (this.checked) {
+        body.classList.add('dark-mode', 'bg-black');
+        cardBody.classList.add('dark-mode', 'bg-dark')
+        cardBody.classList.remove('text-dark')
+    } else {
+        body.classList.remove('dark-mode', 'bg-black', 'text-dark');
+        cardBody.classList.remove('dark-mode', 'bg-dark', 'text-dark')
+        body.classList.add('text-dark');
+        cardBody.classList.add('text-dark')
+    }
+});
+
