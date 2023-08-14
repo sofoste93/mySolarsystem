@@ -15,8 +15,35 @@ document.getElementById('planet-search').addEventListener('input', function () {
         venus: {
             info: "Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty.",
             imagePath: "static/images/Venus.png"
+        },
+        earth: {
+            info: "Earth is the third planet from the Sun and the only astronomical object known to harbor life.",
+            imagePath: "static/images/Earth.png"
+        },
+        mars: {
+            info: "Mars is the fourth planet from the Sun. It is often referred to as the Red Planet.",
+            imagePath: "static/images/Mars.png"
+        },
+        jupiter: {
+            info: "Jupiter is the largest planet in our solar system, and is known for its Great Red Spot, a storm which has been raging for at least 300 years.",
+            imagePath: "static/images/Jupiter.png"
+        },
+        saturn: {
+            info: "Saturn is the second-largest planet, distinguished by its ring system, composed mostly of ice particles and a smaller amount of rocky debris and dust.",
+            imagePath: "static/images/Saturn.png"
+        },
+        uranus: {
+            info: "Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.",
+            imagePath: "static/images/uranus.png"
+        },
+        neptune: {
+            info: "Neptune is the eighth and farthest-known Solar planet from the Sun. It is the fourth-largest planet by diameter and the third-largest by mass.",
+            imagePath: "static/images/neptune.png"
+        },
+        Pluto: {
+            info: "Once considered the ninth planet, Pluto is now classified as a dwarf planet. It was the first Kuiper Belt object to be discovered.",
+            imagePath: "static/images/Pluto.png"
         }
-        // ... Add similar info and paths for other planets ...
     };
 
     if (planets[planetName]) {
