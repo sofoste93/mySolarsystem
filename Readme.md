@@ -1,7 +1,7 @@
 # Solar System Simulation
 
 This project is a visually-pleasing simulation of the solar system, written using only HTML and CSS. It features each of the eight planets in our solar system, along with a fictional dwarf planet. Each planet is orbiting in a elliptical path around the sun with different speeds to give a feel of actual Solar System.
-
+![2023-08-16 23_58_11-MY SOLAR SYSTEM.png](static%2Fimages%2F2023-08-16%2023_58_11-MY%20SOLAR%20SYSTEM.png)
 ## Features
 
 - The simulation presents each of the eight planets and Sun in different colors and sizes with visually stunning radial gradients.
