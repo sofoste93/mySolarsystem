@@ -4,37 +4,33 @@ html {
     padding: 0;
     width: 100%;
     height: 100%;
+    background-color: orange;
 }
 
 .solar-system {
     width: 100%;
     height: 100vh;
     position: relative;
-    perspective: 800px;
     overflow: hidden;
-    perspective: 1200px;
+    perspective: 1400px;
 }
 
 .sun {
-    width: 100px;
-    height: 100px;
-    background-color: #ffce00;
+    width: 15%;
+    height: 15%;
     border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 55%;
+    left: 55%;
     transform: translate(-50%, -50%);
-    animation: spin 10s linear infinite;
-    background: radial-gradient(circle, #FFD700, #FFA500);
-    box-shadow: 0 0 20px rgba(255, 206, 0, 0.5);
-
+    background: #ffce00 radial-gradient(circle, #FFD700, #FFA500);
+    box-shadow: 0 0 0 25px rgba(255, 206, 0, 0.5);
     position: relative;
     z-index: 10;
+    animation: glowing 2.1s infinite alternate;
 }
 
 .orbit {
     /* ... existing styles ... */
-
     transform: translate(-50%, -50%) scaleX(0.85) rotateX(45deg);
     /* Adjust scaleX and rotateX for desired effect */
     opacity: 0.5;
@@ -79,17 +75,14 @@ html {
 .sun::before,
 .sun::after {
     content: "";
-    position: absolute;
-    top: -10%;
+    position: relative;
+    top: 50%;
     /* Adjust as needed to center the glow on the sun */
-    left: -10%;
-    /* Adjust as needed to center the glow on the sun */
-    width: 120%;
-    /* This should be greater than 100% to have the glow surround the sun */
-    height: 120%;
+    left: 50%;
+
     /* This should be greater than 100% to have the glow surround the sun */
     border-radius: 50%;
-    box-shadow: 0 0 50px 25px #ffce00;
+    box-shadow: 15px 20px 50px 25px #ffce00;
     /* Adjust the spread and size for desired glow effect */
     opacity: 0.6;
     z-index: -1;
@@ -100,19 +93,19 @@ html {
 
 @keyframes glowing {
     from {
-        box-shadow: 5 10 35px 10px #ffce00;
+        box-shadow: 5px 10px 35px 10px #ffce00;
         opacity: 0.5;
     }
 
     to {
-        box-shadow: 5 10 65px 20px #ffce00;
+        box-shadow: 5px 10px 65px 20px #ffce00;
         opacity: 0.7;
     }
 }
 
 .planet {
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -120,6 +113,7 @@ html {
     transform-origin: center bottom;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    animation: spin 20s linear infinite;
 }
 
 @keyframes venus-orbit {
@@ -203,11 +197,10 @@ html {
 }
 
 .mercury {
-    background-color: #a9a9a9;
     width: 12px;
     height: 10px;
     animation: mercury-orbit 4s linear infinite;
-    background: radial-gradient(circle, #d4d4d4, #808080);
+    background: #a9a9a9 radial-gradient(circle, #d4d4d4, #808080);
 }
 
 @keyframes mercury-orbit {
@@ -222,11 +215,10 @@ html {
 }
 
 .venus {
-    background-color: #f39c12;
     width: 20px;
     height: 18px;
     animation: venus-orbit 7s linear infinite;
-    background: radial-gradient(circle, #f5b041, #d35400);
+    background: #f39c12 radial-gradient(circle, #f5b041, #d35400);
 }
 
 @keyframes venus-orbit {
@@ -240,11 +232,10 @@ html {
 }
 
 .earth {
-    background-color: #3498db;
     width: 22px;
     height: 20px;
     animation: earth-orbit 10s linear infinite;
-    background: radial-gradient(circle, #5dade2, #21618c);
+    background: #3498db radial-gradient(circle, #5dade2, #21618c);
 }
 
 @keyframes earth-orbit {
@@ -258,11 +249,10 @@ html {
 }
 
 .mars {
-    background-color: #e74c3c;
     width: 18px;
     height: 16px;
     animation: mars-orbit 15s linear infinite;
-    background: radial-gradient(circle, #e57373, #c0392b);
+    background: #e74c3c radial-gradient(circle, #e57373, #c0392b);
 }
 
 @keyframes mars-orbit {
@@ -276,11 +266,10 @@ html {
 }
 
 .jupiter {
-    background-color: #d35400;
     width: 45px;
     height: 43px;
     animation: jupiter-orbit 30s linear infinite;
-    background: radial-gradient(circle, #e67e22, #8e44ad);
+    background: #d35400 radial-gradient(circle, #e67e22, #8e44ad);
 }
 
 @keyframes jupiter-orbit {
@@ -296,12 +285,11 @@ html {
 /* ... Previous CSS definitions ... */
 
 .saturn {
-    background-color: #f39c12;
     width: 38px;
     height: 36px;
     animation: saturn-orbit 45s linear infinite;
     position: relative;
-    background: radial-gradient(circle, #f4d03f, #d68910);
+    background: #f39c12 radial-gradient(circle, #f4d03f, #d68910);
 }
 
 .saturn .rings {
@@ -330,11 +318,10 @@ html {
 }
 
 .uranus {
-    background-color: #2980b9;
     width: 35px;
     height: 32px;
     animation: uranus-orbit 60s linear infinite;
-    background: radial-gradient(circle, #5499c7, #154360);
+    background: #2980b9 radial-gradient(circle, #5499c7, #154360);
 }
 
 @keyframes uranus-orbit {
@@ -348,11 +335,10 @@ html {
 }
 
 .neptune {
-    background-color: #34495e;
     width: 30px;
     height: 28px;
     animation: neptune-orbit 75s linear infinite;
-    background: radial-gradient(circle, #5d6d7e, #34495e);
+    background: #34495e radial-gradient(circle, #5d6d7e, #34495e);
 }
 
 @keyframes neptune-orbit {
@@ -411,7 +397,7 @@ body.dark-mode,
 }
 
 .orbit {
-    border: 1px solid #cccccc;
+    border: 5px solid #cccccc;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -481,11 +467,10 @@ body.dark-mode,
 
 
 .dwarf-planet {
-    background-color: #95a5a6;
     width: 36px;
     height: 33px;
     animation: dwarf-planet-orbit 90s linear infinite;
-    background: radial-gradient(circle, #5d6d7e, #131516);
+    background: #95a5a6 radial-gradient(circle, #5d6d7e, #131516);
 }
 
 @keyframes dwarf-planet-orbit {
@@ -500,5 +485,5 @@ body.dark-mode,
 
 .planet,
 .sun {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 10px 12px rgba(0, 0, 0, 0.5);
 }
