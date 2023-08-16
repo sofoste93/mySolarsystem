@@ -46,7 +46,7 @@ html {
     height: 120%;
     /* This should be greater than 100% to have the glow surround the sun */
     border-radius: 50%;
-    box-shadow: 0 0 50px 15px #ffce00;
+    box-shadow: 0 0 50px 25px #ffce00;
     /* Adjust the spread and size for desired glow effect */
     opacity: 0.6;
     z-index: -1;
@@ -57,12 +57,12 @@ html {
 
 @keyframes glowing {
     from {
-        box-shadow: 0 0 35px 10px #ffce00;
+        box-shadow: 5 10 35px 10px #ffce00;
         opacity: 0.5;
     }
 
     to {
-        box-shadow: 0 0 65px 20px #ffce00;
+        box-shadow: 5 10 65px 20px #ffce00;
         opacity: 0.7;
     }
 }
