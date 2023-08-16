@@ -32,6 +32,49 @@ html {
     z-index: 10;
 }
 
+.orbit {
+    /* ... existing styles ... */
+
+    transform: translate(-50%, -50%) scaleX(0.85) rotateX(45deg);
+    /* Adjust scaleX and rotateX for desired effect */
+    opacity: 0.5;
+    /* Makes orbits slightly transparent for a more subtle effect */
+}
+
+/* Specific adjustments for each orbit */
+.mercury-orbit {
+    transform: translate(-50%, -50%) scaleX(0.82) rotateX(45deg);
+}
+
+.venus-orbit {
+    transform: translate(-50%, -50%) scaleX(0.84) rotateX(45deg);
+}
+
+.earth-orbit {
+    transform: translate(-50%, -50%) scaleX(0.86) rotateX(45deg);
+}
+
+.mars-orbit {
+    transform: translate(-50%, -50%) scaleX(0.88) rotateX(45deg);
+}
+
+.jupiter-orbit {
+    transform: translate(-50%, -50%) scaleX(0.90) rotateX(45deg);
+}
+
+.saturn-orbit {
+    transform: translate(-50%, -50%) scaleX(0.92) rotateX(45deg);
+}
+
+.uranus-orbit {
+    transform: translate(-50%, -50%) scaleX(0.94) rotateX(45deg);
+}
+
+.neptune-orbit {
+    transform: translate(-50%, -50%) scaleX(0.96) rotateX(45deg);
+}
+
+/* ... and so on for other orbits ... */
 
 .sun::before,
 .sun::after {
