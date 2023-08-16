@@ -12,7 +12,7 @@ This project is a visually-pleasing simulation of the solar system, written usin
 ## Usage
 
 All you need to do is open the `index.html` file in your favorite browser to start the simulation.
-
+![2023-08-17 00_01_15-.png](static%2Fimages%2F2023-08-17%2000_01_15-.png)
 ## Customizations
 
 You can customize the appearance of the planets, the sun, and the orbits by modifying the corresponding CSS code found in the `styles.css` file.
