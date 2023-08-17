@@ -289,7 +289,7 @@ html {
     height: 36px;
     animation: saturn-orbit 45s linear infinite;
     position: relative;
-    background: #f39c12 radial-gradient(circle, #f4d03f, #d68910);
+    background: #f39c12 radial-gradient(circle, #beb076, #c48f3b);
 }
 
 .saturn .rings {
